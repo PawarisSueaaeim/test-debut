@@ -26,7 +26,7 @@ export default function Header({ local }: Props) {
     },[valueSearch]);
 
     return (
-        <div className="flex justify-between items-center p-2">
+        <div className="relative flex justify-between items-center p-2 overflow-x-hidden">
             <Image
                 className="max-md:w-40"
                 src="/images/SOne_index_logo.png"
@@ -101,7 +101,7 @@ export default function Header({ local }: Props) {
                     </span>
                 </div>
             </div>
-            <div className={`${showMenu ? "right-[-2px] duration-300" : "right-[-100%] duration-300"} top-0 absolute min-h-screen bg-black p-2`}>
+            <div className={`${showMenu ? "right-[-2px] duration-300" : "right-[-100%] duration-300"} top-0 fixed min-h-screen bg-black p-2`}>
                 <div className="flex flex-col text-white gap-2">
                     <Image
                         src={'/images/SOne_Mobile_arrow02.jpg'}
