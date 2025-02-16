@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { ORENGE } from "./constants/COLORS";
 
 export default {
   content: [
@@ -9,8 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        orenge: ORENGE
       },
     },
   },

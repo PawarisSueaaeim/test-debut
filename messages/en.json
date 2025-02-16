@@ -11,6 +11,14 @@
         "news_events": "News & Events",
         "safety_tips": "Safety Tips",
         "faqs": "FAQs",
-        "location": "Location"
+        "location": "Location",
+
+        "select_tires": "Select Tires",
+        "width": "Width",
+        "width_details": "Width Details",
+        "height": "Height",
+        "height_details": "Height Details",
+        "radius": "Radius",
+        "radius_details": "Radius Details"
     }
 }
