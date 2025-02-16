@@ -1,0 +1,16 @@
+{
+    "Navigations": {
+        "about": "เกี่ยวกับเรา",
+        "job_opportunity": "โอกาสในการทำงาน",
+        "contact": "ติดต่อเรา",
+        "site_map": "สาขาทั้งหมด"
+    },
+    "Homepage": {
+        "product_services": "สินค้า & บริการ",
+        "promotions": "โปรโมชัน",
+        "news_events": "ข่าวสาร",
+        "safety_tips": "ความปลอดภัย",
+        "faqs": "คำถามที่พบบ่อย",
+        "location": "สถานที่ตั้ง"
+    }
+}

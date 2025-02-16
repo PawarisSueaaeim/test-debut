@@ -1,0 +1,16 @@
+{
+    "Navigations": {
+        "about": "About Us",
+        "job_opportunity": "Job Opportunity",
+        "contact": "Contact Us",
+        "site_map": "Site Map"
+    },
+    "Homepage": {
+        "product_services": "Product & Services",
+        "promotions": "Promotions",
+        "news_events": "News & Events",
+        "safety_tips": "Safety Tips",
+        "faqs": "FAQs",
+        "location": "Location"
+    }
+}
