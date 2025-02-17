@@ -56,8 +56,8 @@ export default function Menu({}: Props) {
                         return (
                             <Link key={item.id} href={item.path}>
                                 <span
-                                    className={`flex text-white gap-2 ${
-                                        path === item.path ? 'text-orenge' : ''
+                                    className={`flex gap-2 ${
+                                        path === item.path ? 'text-orenge' : 'text-white'
                                     }`}
                                 >
                                     <Image
