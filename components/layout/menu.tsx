@@ -1,25 +1,30 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 type Props = {};
 
 export default function Menu({}: Props) {
     const t = useTranslations('Homepage');
+    const router = useRouter();
+    const path = usePathname();
 
-    const [onMouseEnter, setOnMouseEnter] = useState<string>('');
+    const [onMouseEnterSocial, setOnMouseEnterSocial] = useState<string>('');
+    const [onMouseEnterMenu, setOnMouseEnterMenu] = useState<string>('');
     const [onMouseEnterMenuMobile, setOnMouseEnterMenuMobile] =
         useState<boolean>(false);
     const [showMenu, setShowMenu] = useState<boolean>(false);
 
     const menu = [
-        { id: '001', title: t('product_services') },
-        { id: '002', title: t('promotions') },
-        { id: '003', title: t('news_events') },
-        { id: '004', title: t('safety_tips') },
-        { id: '005', title: t('faqs') },
-        { id: '006', title: t('location') },
+        { id: '001', title: t('product_services'), path: '/product-service' },
+        { id: '002', title: t('promotions'), path: '/promotions' },
+        { id: '003', title: t('news_events'), path: '/news-event' },
+        { id: '004', title: t('safety_tips'), path: '/safety-tips' },
+        { id: '005', title: t('faqs'), path: '/faqs' },
+        { id: '006', title: t('location'), path: '/location' },
     ];
 
     const socialMenu = [
@@ -40,24 +45,44 @@ export default function Menu({}: Props) {
         },
     ];
 
+    useEffect(() => {
+        console.log(path);
+    }, [path]);
+
     return (
         <div>
             <div className="flex justify-between bg-black px-1 py-2">
                 <div className="max-[860px]:hidden flex text-sm font-normal gap-8">
                     {menu.map((item) => {
                         return (
-                            <span
-                                key={item.id}
-                                className="flex text-white hover:text-[#f05a28] gap-2"
-                            >
-                                <Image
-                                    src={'/images/SOne_index_menu02.png'}
-                                    alt="icon_menu"
-                                    height={20}
-                                    width={20}
-                                />
-                                {item.title}
-                            </span>
+                            <Link key={item.id} href={item.path}>
+                                <span
+                                    className={`flex text-white gap-2 ${
+                                        path === item.path ? 'text-orenge' : ''
+                                    }`}
+                                >
+                                    <Image
+                                        src={
+                                            path === item.path ||
+                                            onMouseEnterMenu === item.id
+                                                ? '/images/SOne_index_menu02.png'
+                                                : '/images/SOne_index_menu01.png'
+                                        }
+                                        alt="icon_menu"
+                                        height={20}
+                                        width={20}
+                                        onMouseEnter={() =>
+                                            setOnMouseEnterMenu(item.id)
+                                        }
+                                        onMouseLeave={() =>
+                                            setOnMouseEnterMenu('')
+                                        }
+                                    />
+                                    <span className="hover:text-orenge">
+                                        {item.title}
+                                    </span>
+                                </span>
+                            </Link>
                         );
                     })}
                 </div>
@@ -82,13 +107,13 @@ export default function Menu({}: Props) {
                             <div
                                 key={item.id}
                                 onMouseEnter={() =>
-                                    setOnMouseEnter(`${item.id}`)
+                                    setOnMouseEnterSocial(`${item.id}`)
                                 }
-                                onMouseLeave={() => setOnMouseEnter('')}
+                                onMouseLeave={() => setOnMouseEnterSocial('')}
                             >
                                 <Image
                                     src={
-                                        item.id === onMouseEnter
+                                        item.id === onMouseEnterSocial
                                             ? item.hoverSrc
                                             : item.src
                                     }
