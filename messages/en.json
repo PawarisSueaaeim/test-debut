@@ -19,6 +19,25 @@
         "height": "Height",
         "height_details": "Height Details",
         "radius": "Radius",
-        "radius_details": "Radius Details"
+        "radius_details": "Radius Details",
+
+        "day": "Day",
+        "month": "Month",
+        "years": "Years",
+
+        "jan": "January",
+        "feb": "February",
+        "mar": "March",
+        "apr": "April",
+        "may": "May",
+        "jun": "June",
+        "jul": "July",
+        "aug": "August",
+        "sep": "September",
+        "oct": "Octoberember",
+        "nov": "November",
+        "dec": "December",
+
+        "promotions_details": "0% installment for 10 months or 10% discount"
     }
 }

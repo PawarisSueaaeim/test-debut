@@ -32,7 +32,7 @@ export default function Banner({}: Props) {
     };
 
     const handleIndexImageDown = () => {
-        if (indexImage < imageDatas.length) {
+        if (indexImage < imageDatas.length - 1) {
             setIndexImage(indexImage + 1);
         }
     };
