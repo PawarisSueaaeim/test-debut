@@ -29,12 +29,14 @@ export default async function Tires({}: Props) {
     ];
 
     return (
-        <div className="bg-orenge text-white">
-            <div className="font-semibold text-lg px-1">
-                {t('select_tires')}
+        <div className="flex flex-col bg-orenge text-white h-full">
+            <div>
+                <div className="font-semibold text-lg px-1">
+                    {t('productions')}
+                </div>
+                <hr className="bg-white" />
             </div>
-            <hr className="bg-white" />
-            <div className="grid grid-cols-2 max-[531px]:grid-cols-1 py-1">
+            <div className="flex justify-between items-center py-1">
                 <Image
                     src={'/images/SOne_index_bg_searchtype.jpg'}
                     alt="tires"

@@ -2,14 +2,13 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 type Props = {};
 
 export default function Menu({}: Props) {
     const t = useTranslations('Homepage');
-    const router = useRouter();
     const path = usePathname();
 
     const [onMouseEnterSocial, setOnMouseEnterSocial] = useState<string>('');
@@ -131,7 +130,7 @@ export default function Menu({}: Props) {
                     showMenu
                         ? ' left-0 duration-300'
                         : ' left-[-100%] duration-300'
-                } absolute min-h-screen bg-black`}
+                } absolute min-h-screen bg-black z-[99]`}
             >
                 {menu.map((item) => {
                     return (

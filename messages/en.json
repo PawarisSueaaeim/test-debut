@@ -13,7 +13,7 @@
         "faqs": "FAQs",
         "location": "Location",
 
-        "select_tires": "Select Tires",
+        "productions": "Productions",
         "width": "Width",
         "width_details": "Width Details",
         "height": "Height",
@@ -38,6 +38,13 @@
         "nov": "November",
         "dec": "December",
 
-        "promotions_details": "0% installment for 10 months or 10% discount"
+        "promotions_details": "0% installment for 10 months or 10% discount",
+
+        "safety_tips_details1": "lorem ipsum",
+        "safety_tips_details2": "dolor sit amet",
+        "safety_tips_details3": "consectetur adip occ loremec themet",
+        "safety_tips_search_details": "safety tips search",
+
+        "footer": "Copyright © 2014"
     }
 }

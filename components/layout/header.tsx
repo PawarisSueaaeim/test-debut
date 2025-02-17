@@ -34,7 +34,7 @@ export default function Header({ local }: Props) {
                 height={300}
                 width={300}
             />
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex flex-col items-end max-md:py-1 gap-2">
                 <div className="flex justify-end gap-2">
                     <Image
                         src={
@@ -101,7 +101,7 @@ export default function Header({ local }: Props) {
                     </span>
                 </div>
             </div>
-            <div className={`${showMenu ? "right-[-2px] duration-300" : "right-[-100%] duration-300"} top-0 fixed min-h-screen bg-black p-2`}>
+            <div className={`${showMenu ? "right-[-2px] duration-300" : "right-[-100%] duration-300"} top-0 fixed min-h-screen bg-black p-2 z-[100]`}>
                 <div className="flex flex-col text-white gap-2">
                     <Image
                         src={'/images/SOne_Mobile_arrow02.jpg'}

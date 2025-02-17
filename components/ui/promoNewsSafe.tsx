@@ -1,11 +1,16 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React from 'react';
+import React, { Fragment, useState } from 'react';
+import NewsCard from '../common/newsCard';
 
 type Props = {};
 
 export default function PromoNewsSafe({}: Props) {
     const t = useTranslations('Homepage');
+
+    const [idNewsEventActive, setIdNewsEventActive] = useState('001');
+    const [searchTrips, setSearchTrips] = useState('Search...');
 
     const dayDatas = [
         { id: '01', day: '1' },
@@ -71,10 +76,37 @@ export default function PromoNewsSafe({}: Props) {
         { id: '12', year: 2025 },
     ];
 
+    const newsAndEventDatas = [
+        {
+            id: '001',
+            day: '19',
+            month: 'Nov',
+            years: '2014',
+            pic: '/images/SOne_index_news_pic3.png',
+            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        },
+        {
+            id: '002',
+            day: '19',
+            month: 'Nov',
+            years: '2014',
+            pic: '/images/SOne_index_news_pic3.png',
+            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        },
+        {
+            id: '003',
+            day: '19',
+            month: 'Nov',
+            years: '2014',
+            pic: '/images/SOne_index_news_pic3.png',
+            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        },
+    ];
+
     return (
-        <div className="grid grid-cols-12 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-1">
             <div className="col-span-3">
-                <div className="bg-orenge text-white font-semibold p-1">
+                <div className="bg-orenge text-white p-1 text-xl">
                     {t('promotions')}
                 </div>
                 <hr className="bg-white" />
@@ -127,10 +159,125 @@ export default function PromoNewsSafe({}: Props) {
                         />
                     </div>
                 </div>
-                <div className='bg-orenge h-[13px] w-full'/>
+                <div className="bg-orenge h-[13px] w-full" />
             </div>
-            <div className="bg-red-300 col-span-6">2</div>
-            <div className="bg-blue-400 col-span-3">3</div>
+            <div className="flex flex-col border border-orenge col-span-6">
+                <div className="flex justify-between items-center p-1 text-xl">
+                    {t('news_events')}
+                    <div className="flex gap-1">
+                        {newsAndEventDatas.map((item) => {
+                            return (
+                                <div
+                                    key={item.id}
+                                    onClick={() =>
+                                        setIdNewsEventActive(item.id)
+                                    }
+                                >
+                                    <Image
+                                        src={
+                                            idNewsEventActive === item.id
+                                                ? '/images/SOne_index_bullet1.png'
+                                                : '/images/SOne_index_bullet2.png'
+                                        }
+                                        alt="/images/SOne_index_bullet2.png"
+                                        height={10}
+                                        width={10}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                <hr className="border border-t-orenge bg-none" />
+                <div className="grid grid-cols-3 gap-4 p-3">
+                    {newsAndEventDatas.map((item) => {
+                        return (
+                            <Fragment key={item.id}>
+                                <NewsCard
+                                    pic={item.pic}
+                                    day={item.day}
+                                    month={item.month}
+                                    years={item.years}
+                                    detail={item.detail}
+                                    bgColor={
+                                        idNewsEventActive === item.id
+                                            ? 'bg-orenge'
+                                            : 'bg-black'
+                                    }
+                                />
+                            </Fragment>
+                        );
+                    })}
+                </div>
+            </div>
+            <div className="flex flex-col col-span-3 gap-2">
+                <div className="flex max-h-[142px] w-full">
+                    <Image
+                        src="/images/SOne_index_tips1.png"
+                        alt="/images/SOne_index_tips1.png"
+                        height={142}
+                        width={200}
+                        className="object-cover"
+                    />
+                    <div className="flex flex-col h-full w-full">
+                        <div className="flex flex-col justify-center items-center bg-[#252525] border-t border-r border-b border-orenge p-2">
+                            <div className="text-orenge text-xl">
+                                {t('safety_tips')}
+                            </div>
+                            <div className="flex justify-start items-center w-full">
+                                <Image
+                                    src="/images/SOne_index_pic66.png"
+                                    alt="/images/SOne_index_pic66.png"
+                                    width={13}
+                                    height={9}
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-center text-white text-sm">
+                                <span>{t('safety_tips_details1')}</span>
+                                <span>{t('safety_tips_details2')}</span>
+                                <span>{t('safety_tips_details3')}</span>
+                            </div>
+                            <div className="flex justify-end items-center w-full">
+                                <Image
+                                    src="/images/SOne_index_pic99.png"
+                                    alt="/images/SOne_index_pic99.png"
+                                    width={13}
+                                    height={9}
+                                />
+                            </div>
+                        </div>
+                        <div className="h-[8px]" />
+                    </div>
+                </div>
+                <div className="flex justify-between items-center">
+                    <span>{t('safety_tips_search_details')}</span>
+                    <div className="flex border border-orenge">
+                        <input
+                            type="text"
+                            value={searchTrips}
+                            onChange={(event) =>
+                                setSearchTrips(event.target.value)
+                            }
+                        />
+                        <Image
+                            src="/images/SOne_index_btgo.jpg"
+                            alt="/images/SOne_index_btgo.jpg"
+                            width={23}
+                            height={23}
+                            className="border-l border-orenge"
+                        />
+                    </div>
+                </div>
+                <hr className='border-dashed border-t border-orenge'/>
+                <div className='flex justify-center items-center'>
+                    <Image
+                        src='/images/SOne_index_call.png'
+                        alt='/images/SOne_index_call.png'
+                        height={33}
+                        width={277}
+                    />
+                </div>
+            </div>
         </div>
     );
 }

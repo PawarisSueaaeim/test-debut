@@ -8,12 +8,12 @@
     "Homepage": {
         "product_services": "สินค้า & บริการ",
         "promotions": "โปรโมชัน",
-        "news_events": "ข่าวสาร",
+        "news_events": "ข่าวสาร & กิจกรรม",
         "safety_tips": "ความปลอดภัย",
         "faqs": "คำถามที่พบบ่อย",
         "location": "สถานที่ตั้ง",
 
-        "select_tires": "เลือกขนาดยาง",
+        "productions": "สินค้า",
         "width": "หน้ากว้าง",
         "width_details": "หน้ากว้างเยอะ ทำให้เกาะถนนได้ดี",
         "height": "แก้มยาง",
@@ -38,6 +38,13 @@
         "nov": "พฤศจิกายน",
         "dec": "ธันวาคม",
 
-        "promotions_details": "ผ่อน 0% นาน 10 เดือน หรือ รับส่วนลด 10%"
+        "promotions_details": "ผ่อน 0% นาน 10 เดือน หรือ รับส่วนลด 10%",
+
+        "safety_tips_details1": "ข้อความใช้เพื่อ",
+        "safety_tips_details2": "ลดความ",
+        "safety_tips_details3": "สนใจ",
+        "safety_tips_search_details": "ค้นหาความคุ้มครอง",
+
+        "footer": "Copyright © 2014"
     }
 }

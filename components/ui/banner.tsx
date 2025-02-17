@@ -38,12 +38,11 @@ export default function Banner({}: Props) {
     };
 
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full min-h-[230px] h-full">
             <Image
                 src={'/images/SOne_index_banner.jpg'}
                 alt="banner"
-                width={500}
-                height={500}
+                fill
                 className="object-cover w-full h-full"
             />
             <div className="absolute flex flex-col justify-between items-center h-full z-10 right-0 top-0 py-4">
