@@ -6,16 +6,12 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import Menu from '@/components/layout/menu';
 import Footer from '@/components/layout/footer';
+import localFont from 'next/font/local'
 
-const geistSans = Geist({
-    variable: '--font-geist-sans',
-    subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-    variable: '--font-geist-mono',
-    subsets: ['latin'],
-});
+const myFont = localFont({
+	src: './supermarket.ttf',
+	display: 'swap',
+  })
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -34,7 +30,7 @@ export default async function RootLayout({
         <html lang={locale}>
             <NextIntlClientProvider messages={message}>
                 <body
-                    className={`${geistSans.variable} ${geistMono.variable} flex flex-col gap-3 antialiased`}
+                    className={`${myFont.className} flex flex-col gap-3 antialiased`}
                 >
 					<div>
 						<Header local={locale} />

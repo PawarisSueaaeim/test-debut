@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 type Props = {};
 
@@ -31,7 +31,7 @@ export default async function Tires({}: Props) {
     return (
         <div className="flex flex-col bg-orenge text-white h-full">
             <div>
-                <div className="font-semibold text-lg px-1">
+                <div className="flex items-center font-semibold text-lg px-1">
                     {t('productions')}
                 </div>
                 <hr className="bg-white" />
@@ -44,27 +44,43 @@ export default async function Tires({}: Props) {
                     width={264}
                 />
                 <div className="flex justify-end items-center">
-                    <div className='flex flex-col gap-2 px-1'>
-                        <div>
+                    <div className="flex flex-col gap-3 px-1">
+                        <div className="leading-3">
                             <div className="font-semibold">{t('width')}</div>
                             <div className="text-sm">{t('width_details')}</div>
-                            <select className="text-black w-[170px]">
+                            <select className="text-black w-[170px] h-[22px]">
                                 {widthOptions.map((item) => {
-                                    return <option key={item.id}>{item.value}</option>;
+                                    return (
+                                        <option key={item.id}>
+                                            {item.value}
+                                        </option>
+                                    );
                                 })}
                             </select>
+                        </div>
+                        <div className="leading-3">
                             <div className="font-semibold">{t('height')}</div>
                             <div className="text-sm">{t('height_details')}</div>
-                            <select className="text-black w-[170px]">
+                            <select className="text-black w-[170px] h-[22px]">
                                 {heightOptions.map((item) => {
-                                    return <option key={item.id}>{item.value}</option>;
+                                    return (
+                                        <option key={item.id}>
+                                            {item.value}
+                                        </option>
+                                    );
                                 })}
                             </select>
+                        </div>
+                        <div className="leading-3">
                             <div className="font-semibold">{t('radius')}</div>
                             <div className="text-sm">{t('radius_details')}</div>
-                            <select className="text-black w-[170px]">
+                            <select className="text-black w-[170px] h-[22px]">
                                 {radiusOptions.map((item) => {
-                                    return <option key={item.id}>{item.value}</option>;
+                                    return (
+                                        <option key={item.id}>
+                                            {item.value}
+                                        </option>
+                                    );
                                 })}
                             </select>
                         </div>
@@ -74,6 +90,7 @@ export default async function Tires({}: Props) {
                                 alt="tires_search"
                                 height={24}
                                 width={100}
+                                className="hover:cursor-pointer active:scale-90 duration-150"
                             />
                         </div>
                     </div>

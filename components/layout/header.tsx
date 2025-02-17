@@ -28,7 +28,7 @@ export default function Header({ local }: Props) {
     return (
         <div className="relative flex justify-between items-center pr-2 overflow-x-hidden">
             <Image
-                className="max-md:w-40"
+                className="max-md:w-40 hover:cursor-pointer active:scale-95 duration-150"
                 src="/images/SOne_index_logo.png"
                 alt="logo"
                 height={300}
@@ -73,6 +73,7 @@ export default function Header({ local }: Props) {
                             alt="search"
                             height={27}
                             width={27}
+                            className='hover:cursor-pointer active:scale-90 duration-200'
                         />
                     </span>
                 </div>

@@ -58,6 +58,7 @@ export default function Product({}: Props) {
                             alt={item.src}
                             height={50}
                             width={190}
+                            className='hover:cursor-pointer active:scale-90 duration-150'
                         />
                     </div>
                 );

@@ -134,12 +134,11 @@ export default function Menu({}: Props) {
             >
                 {menu.map((item) => {
                     return (
-                        <div
-                            key={item.id}
-                            className="text-white p-2 hover:text-orange-600"
-                        >
-                            {item.title}
-                        </div>
+                        <Link key={item.id} href={item.path}>
+                            <div className="text-white p-2 hover:text-orange-600">
+                                {item.title}
+                            </div>
+                        </Link>
                     );
                 })}
             </div>

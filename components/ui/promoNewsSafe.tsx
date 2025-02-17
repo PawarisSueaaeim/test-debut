@@ -156,6 +156,7 @@ export default function PromoNewsSafe({}: Props) {
                             alt="tires_search"
                             height={24}
                             width={100}
+                            className='hover:cursor-pointer active:scale-90 duration-150'
                         />
                     </div>
                 </div>
@@ -182,6 +183,7 @@ export default function PromoNewsSafe({}: Props) {
                                         alt="/images/SOne_index_bullet2.png"
                                         height={10}
                                         width={10}
+                                        className='hover:cursor-pointer active:scale-90 duration-150'
                                     />
                                 </div>
                             );
@@ -264,7 +266,7 @@ export default function PromoNewsSafe({}: Props) {
                             alt="/images/SOne_index_btgo.jpg"
                             width={23}
                             height={23}
-                            className="border-l border-orenge"
+                            className="border-l border-orenge hover:cursor-pointer active:scale-90 duration-150"
                         />
                     </div>
                 </div>
