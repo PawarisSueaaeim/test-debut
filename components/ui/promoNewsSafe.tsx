@@ -256,6 +256,7 @@ export default function PromoNewsSafe({}: Props) {
                     <div className="flex border border-orenge">
                         <input
                             type="text"
+                            placeholder='search...'
                             value={searchTrips}
                             onChange={(event) =>
                                 setSearchTrips(event.target.value)
